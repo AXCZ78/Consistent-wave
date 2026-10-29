@@ -1,0 +1,51 @@
+{
+	"geode": "5.11.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "kimchi.evenwave",
+	"name": "Even Wave Spam",
+	"version": "v1.1.0",
+	"developer": "Kimchi",
+	"description": "Evens out wave spam clicks by enforcing a steady gap between inputs.",
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Enabled",
+			"default": true
+		},
+		"wave-only": {
+			"type": "bool",
+			"name": "Wave only",
+			"description": "Only smooth inputs while you are in the wave gamemode.",
+			"default": true
+		},
+		"gap-ms": {
+			"type": "float",
+			"name": "Gap between inputs (ms)",
+			"description": "Minimum real time between any two press/release events. Lower = faster spam. 25 ms is about 20 CPS.",
+			"default": 25.0,
+			"min": 5.0,
+			"max": 100.0,
+			"control": {
+				"slider": true,
+				"input": true
+			}
+		},
+		"max-delay-ms": {
+			"type": "float",
+			"name": "Max queue delay (ms)",
+			"description": "If queued clicks would be delayed longer than this, the backlog is dropped. Stops spam continuing after you stop.",
+			"default": 60.0,
+			"min": 20.0,
+			"max": 300.0,
+			"control": {
+				"slider": true,
+				"input": true
+			}
+		}
+	}
+}
